@@ -1,16 +1,31 @@
-package com.example.demo.rest.dtos;
+package com.example.demo.repositories.entities;
 
 import javax.persistence.*;
 import java.math.BigInteger;
 import java.util.List;
 
+@Entity
 public class Computer {
 
+    @Id
+    @GeneratedValue
     private BigInteger id;
+
+    @Column
     private String name;
+
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     private Cpu cpu;
+
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     private Motherboard motherboard;
+
+    @OneToMany(mappedBy = "computer", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     private List<GraphicsCard> graphicsCardList;
+
+    public Computer(){
+        //used by JPA
+    }
 
     public Computer(BigInteger id, String name, Cpu cpu, Motherboard motherboard, List<GraphicsCard> graphicsCardList) {
         this.id = id;

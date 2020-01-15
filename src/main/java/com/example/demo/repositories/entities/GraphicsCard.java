@@ -1,17 +1,26 @@
-package com.example.demo.rest.dtos;
+package com.example.demo.repositories.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigInteger;
 
-public class Cpu {
+@Entity
+public class GraphicsCard {
 
+    @Id
+    @GeneratedValue
     private BigInteger id;
+
+    @Column
     private String name;
 
-    public Cpu(BigInteger id, String name){
+    @ManyToOne
+    private Computer computer;
+
+    public GraphicsCard(){
+        //used by JPA
+    }
+
+    public GraphicsCard(BigInteger id, String name){
         this.id = id;
         this.name = name;
     }

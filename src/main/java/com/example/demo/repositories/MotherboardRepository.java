@@ -1,6 +1,6 @@
 package com.example.demo.repositories;
 
-import com.example.demo.rest.dtos.Motherboard;
+import com.example.demo.repositories.entities.Motherboard;
 import org.springframework.data.repository.CrudRepository;
 
 import java.math.BigInteger;

@@ -6,19 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.math.BigInteger;
 
-@Entity
 public class Motherboard {
 
-    @Id
-    @GeneratedValue
     private BigInteger id;
-
-    @Column
     private String name;
-
-    public Motherboard(){
-        //used by JPA
-    }
 
     public Motherboard(BigInteger id, String name){
         this.id = id;

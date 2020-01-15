@@ -3,22 +3,10 @@ package com.example.demo.rest.dtos;
 import javax.persistence.*;
 import java.math.BigInteger;
 
-@Entity
 public class GraphicsCard {
 
-    @Id
-    @GeneratedValue
     private BigInteger id;
-
-    @Column
     private String name;
-
-    @ManyToOne
-    private Computer computer;
-
-    public GraphicsCard(){
-        //used by JPA
-    }
 
     public GraphicsCard(BigInteger id, String name){
         this.id = id;
