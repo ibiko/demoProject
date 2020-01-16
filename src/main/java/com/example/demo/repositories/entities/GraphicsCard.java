@@ -20,11 +20,6 @@ public class GraphicsCard {
         //used by JPA
     }
 
-    public GraphicsCard(BigInteger id, String name){
-        this.id = id;
-        this.name = name;
-    }
-
     public BigInteger getId() {
         return id;
     }

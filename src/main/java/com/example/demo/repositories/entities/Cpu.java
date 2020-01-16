@@ -20,11 +20,6 @@ public class Cpu {
         //used by JPA
     }
 
-    public Cpu(BigInteger id, String name){
-        this.id = id;
-        this.name = name;
-    }
-
     public BigInteger getId() {
         return id;
     }

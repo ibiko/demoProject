@@ -20,11 +20,6 @@ public class Motherboard {
         //used by JPA
     }
 
-    public Motherboard(BigInteger id, String name){
-        this.id = id;
-        this.name = name;
-    }
-
     public BigInteger getId() {
         return id;
     }

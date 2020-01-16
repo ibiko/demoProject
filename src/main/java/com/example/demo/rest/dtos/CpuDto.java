@@ -6,12 +6,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.math.BigInteger;
 
-public class Motherboard {
+public class CpuDto {
 
     private BigInteger id;
     private String name;
 
-    public Motherboard(BigInteger id, String name){
+    public CpuDto(BigInteger id, String name){
         this.id = id;
         this.name = name;
     }

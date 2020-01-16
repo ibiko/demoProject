@@ -1,14 +1,17 @@
 package com.example.demo.rest.dtos;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.math.BigInteger;
 
-public class GraphicsCard {
+public class MotherboardDto {
 
     private BigInteger id;
     private String name;
 
-    public GraphicsCard(BigInteger id, String name){
+    public MotherboardDto(BigInteger id, String name){
         this.id = id;
         this.name = name;
     }

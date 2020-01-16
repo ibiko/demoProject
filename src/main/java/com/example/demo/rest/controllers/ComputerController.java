@@ -1,6 +1,6 @@
 package com.example.demo.rest.controllers;
 
-import com.example.demo.rest.dtos.Computer;
+import com.example.demo.rest.dtos.ComputerDto;
 import com.example.demo.services.ComputerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,26 +21,26 @@ public class ComputerController {
     }
 
     @GetMapping()
-    public Iterable<Computer> findAll() {
+    public Iterable<ComputerDto> findAll() {
         return this.computerService.findAll();
     }
 
     @GetMapping(value = "/{id}")
-    public Optional<Computer> findById(@PathVariable("id") BigInteger id) {
+    public Optional<ComputerDto> findById(@PathVariable("id") BigInteger id) {
         return this.computerService.findById(id);
     }
 
     @PostMapping
-    public void save(@RequestBody Computer computer){
-        this.computerService.save(computer);
+    public void save(@RequestBody ComputerDto computerDto){
+        this.computerService.save(computerDto);
     }
 
     @PutMapping(value = "/{id}")
-    public void update(@PathVariable("id") BigInteger id, @RequestBody Computer computer){
+    public void update(@PathVariable("id") BigInteger id, @RequestBody ComputerDto computerDto){
         if(computerService.findById(id).isEmpty()){
             throw new EntityNotFoundException();
         }
-        this.computerService.save(computer);
+        this.computerService.update(computerDto);
     }
 
     @DeleteMapping(value = "/{id}")

@@ -14,25 +14,17 @@ public class Computer {
     @Column
     private String name;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     private Cpu cpu;
 
-    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     private Motherboard motherboard;
 
-    @OneToMany(mappedBy = "computer", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    @OneToMany(mappedBy = "computer", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     private List<GraphicsCard> graphicsCardList;
 
-    public Computer(){
+    public Computer() {
         //used by JPA
-    }
-
-    public Computer(BigInteger id, String name, Cpu cpu, Motherboard motherboard, List<GraphicsCard> graphicsCardList) {
-        this.id = id;
-        this.name = name;
-        this.cpu = cpu;
-        this.motherboard = motherboard;
-        this.graphicsCardList = graphicsCardList;
     }
 
     public BigInteger getId() {
@@ -73,5 +65,9 @@ public class Computer {
 
     public void addGraphicsCardList(GraphicsCard graphicsCard) {
         this.graphicsCardList.add(graphicsCard);
+    }
+
+    public void setGraphicsCardList(List<GraphicsCard> graphicsCardList) {
+        this.graphicsCardList = graphicsCardList;
     }
 }
