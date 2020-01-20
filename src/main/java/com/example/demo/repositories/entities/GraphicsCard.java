@@ -13,10 +13,10 @@ public class GraphicsCard {
     @Column
     private String name;
 
-    @ManyToOne
+    @ManyToOne(targetEntity = Computer.class)
     private Computer computer;
 
-    public GraphicsCard(){
+    public GraphicsCard() {
         //used by JPA
     }
 
@@ -34,5 +34,13 @@ public class GraphicsCard {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Computer getComputer() {
+        return computer;
+    }
+
+    public void setComputer(Computer computer) {
+        this.computer = computer;
     }
 }

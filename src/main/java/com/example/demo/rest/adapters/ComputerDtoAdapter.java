@@ -27,6 +27,7 @@ public class ComputerDtoAdapter {
         if (entity.getGraphicsCardList() != null) {
             for (com.example.demo.repositories.entities.GraphicsCard graphicsCardEntity : entity.getGraphicsCardList()) {
                 GraphicsCardDto graphicsCardDto = new GraphicsCardDto(graphicsCardEntity.getId(), graphicsCardEntity.getName());
+                graphicsCardDtoList.add(graphicsCardDto);
             }
         }
         return new ComputerDto(entity.getId(), entity.getName(), cpuDto, motherboardDto, graphicsCardDtoList);
