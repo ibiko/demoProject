@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigInteger;
 import java.util.Optional;
@@ -21,6 +22,8 @@ class DemoApplicationTests {
     @Autowired
     private ComputerController computerController;
 
+    //TODO :: rewrite tests as @Transactional
+    
     @Test
     @Order(1)
     public void testFindAllEmpty() {
